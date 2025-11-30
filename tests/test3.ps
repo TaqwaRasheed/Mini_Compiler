@@ -1,0 +1,50 @@
+note> ==========================================
+note> PatternScript Security System v1.0
+note> ==========================================
+
+plot "--- INITIALIZING SECURITY PROTOCOL ---":
+plot " ":
+
+note> 1. Get User Input
+ask pin_code:
+plot "Verifying PIN: " ~ pin_code:
+plot "-" * 30:
+
+security_level = 0:
+
+note> 2. Run Verification Loop (3 Checks)
+loop check_id in 1..3 {
+    plot "Running Check #" ~ check_id ~ "...":
+    
+    note> Calculate a checksum value
+    checksum = pin_code * check_id:
+    
+    note> 3. Branching Logic (Check/Else)
+    check checksum > 50 {
+        plot "  [OK] Strong Signal Detected.":
+        security_level = security_level + 1:
+        
+        note> Generate visual pattern for strong signal
+        strength = check_id * 2:
+        plot "  Graph: " ~ "|" * strength:
+        
+    } else {
+        plot "  [!!] Weak Signal. Retrying...":
+    }
+}
+
+plot "-" * 30:
+plot "Final Integrity Score: " ~ security_level:
+
+note> 4. Assign Clearance (Choose/Switch)
+plot "Assigning Clearance Level...":
+
+choose security_level {
+    3 -> plot "ACCESS GRANTED: Level 3 (Administrator)":
+    2 -> plot "ACCESS GRANTED: Level 2 (User)":
+    1 -> plot "ACCESS RESTRICTED: Level 1 (Guest)":
+    default -> plot "ACCESS DENIED: Intruder Alert!":
+}
+
+plot " ":
+plot "--- SYSTEM LOGOUT ---":
