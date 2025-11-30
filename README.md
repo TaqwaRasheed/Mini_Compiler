@@ -4,24 +4,13 @@
 
 A fully hand-built **Domain-Specific Language (DSL)** and compiler pipeline written in Python, designed for algorithmic pattern generation, string manipulation, and control flow. Includes a custom GUI IDE with syntax highlighting.
 
----
 
 ## 🚀 **Overview**
 
-**PatternScript** is a beginner-friendly scripting language designed as part of a university Compiler Construction course.
+**PatternScript** is a scripting language built from scratch using Python. It demonstrates the complete 6-phase compiler construction process, from Lexical Analysis to Code Generation.
 
-It demonstrates **all six phases of compiler construction**, implemented from scratch:
+Unlike general-purpose languages, **PatternScript** features a unique syntax optimized for visual patterns and flow control, including a custom IDE with syntax highlighting.
 
-* Lexical Analysis (Regex Tokenizer)
-* Parsing (Recursive Descent)
-* Semantic Analysis
-* Intermediate Code Generation (TAC)
-* Optimization (Constant Folding)
-* Code Generation (Interpreter Runtime)
-
-PatternScript introduces a unique syntax that blends clarity with expressiveness — making pattern creation simple and beautiful.
-
----
 
 ## ✨ **Key Features**
 
@@ -59,7 +48,6 @@ Featuring:
 
 Implements the full compiler pipeline the way real compilers do it.
 
----
 
 ## 📸 **Screenshots**
 
@@ -71,7 +59,6 @@ Implements the full compiler pipeline the way real compilers do it.
 
 *(Insert screenshot of generated quadruples)*
 
----
 
 ## 📂 **Project Structure**
 
@@ -101,7 +88,6 @@ PatternScript/
 
 * Python 3.x
 
----
 
 ## 📥 **Installation**
 
@@ -112,7 +98,6 @@ git clone https://github.com/YourUsername/PatternScript-Compiler.git
 cd PatternScript-Compiler
 ```
 
----
 
 ## ▶️ **How to Run**
 
@@ -128,7 +113,6 @@ python src/gui_pro.py
 python src/interpreter.py tests/final_demo.ps
 ```
 
----
 
 ## 📝 **PatternScript Syntax Guide**
 
@@ -177,7 +161,6 @@ choose x {
 }
 ```
 
----
 
 ## 🧠 **Compiler Architecture**
 
@@ -213,7 +196,6 @@ Constant folding: pre-evaluates expressions during compilation.
 
 Final interpreter executes optimized TAC.
 
----
 
 ## 👥 **Authors**
 
@@ -222,6 +204,5 @@ Final interpreter executes optimized TAC.
 
 Built for the **Compiler Construction (CS-4031)** course project.
 
----
 
 
