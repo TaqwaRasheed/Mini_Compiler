@@ -1,143 +1,227 @@
-PatternScript Compiler 🎨
 
-A custom domain-specific language (DSL) and compiler designed for algorithmic pattern generation, string manipulation, and logical control flow.
 
-📖 Overview
+# 🌟 **PatternScript Compiler — A Custom DSL for Patterns & Logic**
 
-PatternScript is a scripting language built from scratch using Python. It demonstrates the complete 6-phase compiler construction process, from Lexical Analysis to Code Generation.
+A fully hand-built **Domain-Specific Language (DSL)** and compiler pipeline written in Python, designed for algorithmic pattern generation, string manipulation, and control flow. Includes a custom GUI IDE with syntax highlighting.
 
-Unlike general-purpose languages, PatternScript features a unique syntax optimized for visual patterns and flow control, including a custom IDE with syntax highlighting.
+---
 
-Key Features
+## 🚀 **Overview**
 
-🧵 The Stitch Operator (~): Seamlessly joins strings and numbers without type casting.
+**PatternScript** is a beginner-friendly scripting language designed as part of a university Compiler Construction course.
 
-🏹 Unique Syntax: Uses note> for comments, : as a terminator, and -> for switch cases.
+It demonstrates **all six phases of compiler construction**, implemented from scratch:
 
-⚡ Built-in Optimization: Features a Constant Folding optimizer (Phase 5) to pre-calculate math operations.
+* Lexical Analysis (Regex Tokenizer)
+* Parsing (Recursive Descent)
+* Semantic Analysis
+* Intermediate Code Generation (TAC)
+* Optimization (Constant Folding)
+* Code Generation (Interpreter Runtime)
 
-🖥️ Custom GUI IDE: A dark-mode IDE with syntax highlighting, line numbers, and live output redirection.
+PatternScript introduces a unique syntax that blends clarity with expressiveness — making pattern creation simple and beautiful.
 
-📜 6-Phase Architecture: Implements Lexer, Recursive Descent Parser, Semantic Analysis, ICG (Three-Address Code), Optimizer, and Interpreter.
+---
 
-📸 Screenshots
+## ✨ **Key Features**
 
-The Custom IDE (GUI)
+### 🧵 **Stitch Operator (`~`)**
 
-(Add a screenshot of your GUI here running the Triangle Pattern)
+Seamlessly joins strings and numbers **without casting**.
+Example:
 
-Intermediate Code Generation (TAC)
+```
+plot "Value: " ~ 5:
+```
 
-(Add a screenshot of the console showing the Yellow TAC output)
+### 🎯 **Unique Syntax**
 
-📂 Project Structure
+* `note>` → Comments
+* `:` → Statement terminator
+* `->` → Case arrow
+* `loop i in 1..5 { ... }` → Clean, Python-like looping
 
+### ⚡ **Built-in Optimizer**
+
+* Constant folding for mathematical simplification
+* Example: `3 * 5 + 2` compiles directly to `17`
+
+### 🖥️ **Custom Dark-Mode IDE**
+
+Featuring:
+
+* Syntax highlighting
+* Line numbers
+* Run button
+* Auto output redirection
+
+### 🧩 **Complete Compiler Design**
+
+Implements the full compiler pipeline the way real compilers do it.
+
+---
+
+## 📸 **Screenshots**
+
+### 🎨 Custom IDE
+
+*(Add a screenshot of your GUI running Triangle Pattern)*
+
+### 🟡 Intermediate Code (TAC)
+
+*(Insert screenshot of generated quadruples)*
+
+---
+
+## 📂 **Project Structure**
+
+```
 PatternScript/
-├── src/                # Source Code
-│   ├── lexer.py        # Tokenizer (Regex-based)
-│   ├── parser.py       # Recursive Descent Parser (AST Generation)
-│   ├── icg.py          # Intermediate Code Generator (TAC)
-│   ├── optimizer.py    # Constant Folding Optimizer
-│   ├── interpreter.py  # Runtime Execution Engine
+├── src/                
+│   ├── lexer.py        # Regex-based tokenizer
+│   ├── parser.py       # Recursive Descent parser → AST
+│   ├── icg.py          # TAC (Three-Address Code) generator
+│   ├── optimizer.py    # Constant Folding
+│   ├── interpreter.py  # Final code execution engine
 │   └── gui_pro.py      # Custom IDE (Tkinter)
 │
-├── tests/              # PatternScript Test Files (.ps)
-│   ├── final_demo.ps   # Complex showcase script
+├── tests/
+│   ├── final_demo.ps   # Full language showcase
 │   └── ...
 │
-└── docs/               # Documentation & Artifacts
+└── docs/
     └── Final_Report.pdf
+```
 
+---
 
-🚀 Getting Started
+## 🧁 **Getting Started**
 
-Prerequisites
+### **Prerequisites**
 
-Python 3.x
+* Python 3.x
 
-Installation
+---
 
-Clone the repository:
+## 📥 **Installation**
 
-git clone [https://github.com/YourUsername/PatternScript-Compiler.git](https://github.com/YourUsername/PatternScript-Compiler.git)
+Clone the repo:
 
-
-Navigate to the project folder:
-
+```bash
+git clone https://github.com/YourUsername/PatternScript-Compiler.git
 cd PatternScript-Compiler
+```
 
+---
 
-How to Run
+## ▶️ **How to Run**
 
-Option 1: The GUI IDE (Recommended)
+### **Option 1 — GUI IDE (Recommended)**
 
-This launches the full IDE with syntax highlighting and file loading.
-
+```bash
 python src/gui_pro.py
+```
 
+### **Option 2 — Run a PatternScript File**
 
-Option 2: Command Line Interpreter
-
-You can run .ps files directly from the terminal.
-
+```bash
 python src/interpreter.py tests/final_demo.ps
+```
 
+---
 
-📝 Syntax Guide
+## 📝 **PatternScript Syntax Guide**
 
-1. Variables & Output
+### 1. **Variables & Output**
 
+```text
 note> This is a comment
 x = 10:
-plot "The value is " ~ x:   note> Stitch operator joins them
+plot "Value: " ~ x:
+```
 
+### 2. **Input**
 
-2. Input
-
+```text
 ask name:
 plot "Hello " ~ name:
+```
 
+### 3. **Loops**
 
-3. Loops (Range)
-
+```text
 loop i in 1..5 {
-    plot "*" * i:   note> 'Multiply' string to repeat it
+    plot "*" * i:
 }
+```
 
+### 4. **Control Flow**
 
-4. Control Flow (Check & Choose)
+#### `check` (if/else)
 
+```text
 check x > 5 {
     plot "High":
 } else {
     plot "Low":
 }
+```
 
+#### `choose` (switch)
+
+```text
 choose x {
     1 -> plot "One":
     2 -> plot "Two":
     default -> plot "Other":
 }
+```
+
+---
+
+## 🧠 **Compiler Architecture**
+
+### Phase 1: **Lexical Analysis**
+
+Regex-based scanner with priority matching to handle `>` vs `note>`.
+
+### Phase 2: **Syntax Analysis**
+
+Recursive Descent Parser builds a clean Abstract Syntax Tree (AST).
+
+### Phase 3: **Semantic Analysis**
+
+* Type checking rules
+* String/Number coercions
+* Symbol table for scopes
+
+### Phase 4: **ICG (Intermediate Code Generation)**
+
+Produces **quadruples** like:
+
+```
+t1 = 3 * 5
+t2 = t1 + 2
+x = t2
+```
+
+### Phase 5: **Optimization**
+
+Constant folding: pre-evaluates expressions during compilation.
+
+### Phase 6: **Code Generation**
+
+Final interpreter executes optimized TAC.
+
+---
+
+## 👥 **Authors**
+
+* **Taqwa Rasheed**
+* **Fatimah Ansari**
+
+Built for the **Compiler Construction (CS-4031)** course project.
+
+---
 
 
-🏗️ Compiler Architecture
-
-Lexical Analysis: Tokenizes input using Regex (distinguishes note> vs >).
-
-Syntax Analysis: Recursive Descent Parser builds an Abstract Syntax Tree (AST).
-
-Semantic Analysis: Checks type compatibility and manages Variable Scope (Symbol Table).
-
-Intermediate Code Generation (ICG): Converts AST to Quadruples (Three-Address Code).
-
-Optimization: Performs Constant Folding (e.g., 5 + 3 * 2 -> 11 at compile time).
-
-Code Generation: Interprets the optimized AST to execute logic.
-
-👥 Authors
-
-Taqwa Rasheed
-
-Fatimah Ansari
-
-Built for the Compiler Construction (CS-4031) Course Project.
