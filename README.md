@@ -49,17 +49,6 @@ Featuring:
 Implements the full compiler pipeline the way real compilers do it.
 
 
-## 📸 **Screenshots**
-
-### 🎨 Custom IDE
-
-*(Add a screenshot of your GUI running Triangle Pattern)*
-
-### 🟡 Intermediate Code (TAC)
-
-*(Insert screenshot of generated quadruples)*
-
-
 ## 📂 **Project Structure**
 
 ```
@@ -73,7 +62,7 @@ PatternScript/
 │   └── gui_pro.py      # Custom IDE (Tkinter)
 │
 ├── tests/
-│   ├── final_demo.ps   # Full language showcase
+│   ├── test1.ps   
 │   └── ...
 │
 └── docs/
@@ -110,7 +99,7 @@ python src/gui_pro.py
 ### **Option 2 — Run a PatternScript File**
 
 ```bash
-python src/interpreter.py tests/final_demo.ps
+python src/interpreter.py tests/test1.ps
 ```
 
 
